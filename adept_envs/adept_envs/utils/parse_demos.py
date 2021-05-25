@@ -204,6 +204,7 @@ def main(env, demo_dir, skip, graph, save_logs, view, render):
                 print(e)
                 continue
             path = {
+                'logname': data['logName'][:-4],
                 'observations': obs,
                 'actions': act,
                 'goals': obs,
@@ -214,7 +215,7 @@ def main(env, demo_dir, skip, graph, save_logs, view, render):
             # accept = input('accept demo?')
             # if accept == 'n':
             #     continue
-            pickle.dump(path, open(demo_dir + env + str(ind) + "_path.pkl", 'wb'))
+            pickle.dump(path, open(demo_dir + env + file + "_path.pkl", 'wb'))
             print(demo_dir + env + file + "_path.pkl")
 
 if __name__ == '__main__':
