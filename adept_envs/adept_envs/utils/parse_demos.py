@@ -215,8 +215,8 @@ def main(env, demo_dir, skip, graph, save_logs, view, render):
             # accept = input('accept demo?')
             # if accept == 'n':
             #     continue
-            pickle.dump(path, open(demo_dir + env + file + "_path.pkl", 'wb'))
-            print(demo_dir + env + file + "_path.pkl")
+            pickle.dump(path, open(demo_dir + env + "_" + data['logName'][:-4] + "_path.pkl", 'wb'))
+            print(demo_dir + env + "_" + data['logName'][:-4] + "_path.pkl")
 
 if __name__ == '__main__':
     main()
